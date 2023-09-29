@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/variables';
+
+:root {
+  font-family: $app-font-family;
+  color: $app-text-color;
+
+  .grass {
+    background-color: #48D0B0;
+  }
+
+  .poison {
+    background-color: #d047ef;
+  }
+
+  .water {
+    background-color: #77BDFE;
+  }
+
+  .fire {
+    background-color: #FB6C6C;
+  }
+
+  .bug {
+    background-color: #95c532;
+  }
+
+  .normal {
+    background-color: #bfc7b6;
+  }
+
+  .flying {
+    background-color: #59c7a8;
+  }
+
+  .electric {
+    background-color: #FFCE4B;
+  }
+
+  .steel {
+    background-color: rgba(76, 100, 201, 0.4);
+  }
+
+  .fighting {
+    background-color: rgb(206, 0, 0);
+  }
+
+  .ghost {
+    background-color: rgba(6, 4, 114);
+  }
+
+  .fairy {
+    background-color: rgb(255, 131, 222);
+  }
+
+  .rock {
+    background-color: rgb(208, 169, 134);
+  }
+
+  .ground {
+    background-color: rgb(162, 127, 40);
+  }
+
+  .psychic {
+    background-color: rgb(244, 67, 255);
+  }
+
+  .ice {
+    background-color: rgb(42, 252, 231);
+  }
+
+  .dragon {
+    background-color: rgb(0, 73, 255);
+  }
+}

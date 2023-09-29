@@ -13,9 +13,8 @@ export class ListingComponent implements OnInit {
   constructor(private pokedexService: PokedexService) {}
 
   ngOnInit(): void {
-    this.pokedexService.getFirstVersionPokemons().subscribe((v) => {
-      console.log(v);
-      this.pokemons = v;
+    this.pokedexService.getFirstVersionPokemons().subscribe((pokemons) => {
+      this.pokemons = pokemons;
     });
   }
 }

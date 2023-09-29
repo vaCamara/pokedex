@@ -1,4 +1,25 @@
-<div *ngFor="let pokemon of pokemons">
-  {{pokemon.name}}
-  <img [src]="pokemon.sprites.front_default" alt="{{pokemon.name}} image">
+<h1 class="pokedex-title">{{ "pokedex.title" | translate }}</h1>
+<div class="item-container">
+  <ng-container *ngFor="let pokemon of pokemons">
+    <div class="item {{ pokemon.types[0].type.name }}">
+      <span class="order">#{{ pokemon.order | number: "3.0" }}</span>
+      <span class="ml-2 font-bold">{{ pokemon.name | titlecase }} </span>
+      <ng-container *ngFor="let pokemonType of pokemon.types">
+        <div
+          [ngClass]="{
+            'lighten-color':
+              pokemon.types[0].type.name === pokemonType.type.name
+          }"
+          class="chip ml-1 mb-1 {{ pokemonType.type.name }}"
+        >
+          {{ pokemonType.type.name | titlecase }}
+        </div>
+      </ng-container>
+      <img
+        [src]="pokemon.sprites.front_default"
+        alt="{{ pokemon.name }} image"
+        class="sprite"
+      />
+    </div>
+  </ng-container>
 </div>

@@ -11,12 +11,15 @@ export class PokedexService {
   constructor(protected http: HttpClient) {}
 
   getFirstVersionPokemons(): Observable<Pokemon[]> {
-    return this.http.get<ListResult>(`${this.endpoint}?offset=0&limit=10`).pipe(
-      map((listResult) => listResult.results),
-      mergeAll(),
-      mergeMap((pokemon) => this.getPokemonDetail(pokemon.name)),
-      toArray(),
-    );
+    return this.http
+      .get<ListResult>(`${this.endpoint}?offset=0&limit=151`)
+      .pipe(
+        map((listResult) => listResult.results),
+        mergeAll(),
+        mergeMap((pokemon) => this.getPokemonDetail(pokemon.name)),
+        toArray(),
+        map((pokemons) => pokemons.sort((a, b) => a.id - b.id)),
+      );
   }
 
   getPokemonDetail(pokemonName: string) {
