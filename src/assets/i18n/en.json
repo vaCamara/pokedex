@@ -1,5 +1,20 @@
 {
   "pokedex": {
     "title": "Pokedex"
+  },
+  "detail": {
+    "about": {
+      "title": "About",
+      "height": "Height",
+      "weight": "Weight",
+      "gender": "Gender",
+      "eggGroup": "Egg groups",
+      "eggCycle": "Egg cycle",
+      "male": "{{percentage}}% Male",
+      "female": "{{percentage}}% Female"
+    },
+    "stats": {
+      "title": "Stats"
+    }
   }
 }

@@ -1,7 +1,10 @@
 <h1 class="pokedex-title">{{ "pokedex.title" | translate }}</h1>
 <div class="item-container">
   <ng-container *ngFor="let pokemon of pokemons">
-    <div class="item {{ pokemon.types[0].type.name }}">
+    <div
+      (click)="seeDetails(pokemon.id)"
+      class="item {{ pokemon.types[0].type.name }}"
+    >
       <span class="order">#{{ pokemon.order | number: "3.0" }}</span>
       <span class="ml-2 font-bold">{{ pokemon.name | titlecase }} </span>
       <ng-container *ngFor="let pokemonType of pokemon.types">

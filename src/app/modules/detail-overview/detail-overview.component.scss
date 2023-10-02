@@ -1,0 +1,29 @@
+:host {
+
+  .detail-overview {
+    top: 0;
+    position: absolute;
+    height: 100vh;
+    @media only screen and (min-width: 768px) {
+      position: absolute;
+      left: 25%;
+      width: 50%;
+    }
+    @media only screen and (max-width: 768px) {
+      left: 0;
+    }
+
+    .overview-image {
+      @media only screen and (max-width: 768px) {
+        width: 100vw;
+      }
+      @media only screen and (min-width: 768px) {
+        width: 10rem;
+      }
+    }
+
+    .genus {
+      width: 100%;
+    }
+  }
+}

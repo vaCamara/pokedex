@@ -1,0 +1,90 @@
+.order {
+  display: block;
+  text-align: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.chip {
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 2px 10px;
+  line-height: 18px;
+  width: fit-content;
+
+  &.lighten-color {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.p-tabmenu-nav-content {
+  border-radius: 10px 10px 0 0;
+}
+
+.grass {
+  background-color: #48D0B0;
+}
+
+.poison {
+  background-color: #d047ef;
+}
+
+.water {
+  background-color: #77BDFE;
+}
+
+.fire {
+  background-color: #FB6C6C;
+}
+
+.bug {
+  background-color: #95c532;
+}
+
+.normal {
+  background-color: #bfc7b6;
+}
+
+.flying {
+  background-color: #59c7a8;
+}
+
+.electric {
+  background-color: #FFCE4B;
+}
+
+.steel {
+  background-color: rgba(76, 100, 201, 0.4);
+}
+
+.fighting {
+  background-color: rgb(206, 0, 0);
+}
+
+.ghost {
+  background-color: rgba(6, 4, 114);
+}
+
+.fairy {
+  background-color: rgb(255, 131, 222);
+}
+
+.rock {
+  background-color: rgb(208, 169, 134);
+}
+
+.ground {
+  background-color: rgb(162, 127, 40);
+}
+
+.psychic {
+  background-color: rgb(244, 67, 255);
+}
+
+.ice {
+  background-color: rgb(42, 252, 231);
+}
+
+.dragon {
+  background-color: rgb(0, 73, 255);
+}

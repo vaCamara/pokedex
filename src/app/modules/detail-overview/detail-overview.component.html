@@ -1,0 +1,29 @@
+<div class="detail-overview {{ pokemon.types[0].type.name }} m-0">
+  <div class="pt-2">
+    <span class="order">#{{ pokemon.order | number: "3.0" }}</span>
+    <span class="ml-2 font-bold">{{ pokemon.name | titlecase }} </span>
+
+    <div class="flex">
+      <ng-container *ngFor="let pokemonType of pokemon.types">
+        <div
+          [ngClass]="{
+            'lighten-color':
+              pokemon.types[0].type.name === pokemonType.type.name
+          }"
+          class="chip ml-1 mb-1 {{ pokemonType.type.name }}"
+        >
+          {{ pokemonType.type.name | titlecase }}
+        </div>
+      </ng-container>
+      <span class="order genus">{{ species.genusDisplay }}</span>
+    </div>
+  </div>
+
+  <img
+    [src]="pokemon.sprites.front_default"
+    alt="{{ pokemon.name }} image"
+    class="overview-image"
+  />
+  <p-tabMenu #tabMenu [model]="items"></p-tabMenu>
+  <router-outlet></router-outlet>
+</div>

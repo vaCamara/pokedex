@@ -1,0 +1,48 @@
+<div class="about-div">
+  <div [innerHTML]="species.textEntryDisplay" class="mb-2 pt-2"></div>
+
+  <div class="size-div flex">
+    <dl>
+      <dt class="light-text">{{ "detail.about.height" | translate }}</dt>
+      <dd>{{ pokemon.height * 10 }}cm</dd>
+    </dl>
+    <dl>
+      <dt class="light-text">{{ "detail.about.weight" | translate }}</dt>
+      <dd>{{ pokemon.weight / 10 }}kg</dd>
+    </dl>
+  </div>
+
+  <div class="infos">
+    <h3>Breeding</h3>
+    <dl>
+      <dt class="light-text">{{ "detail.about.gender" | translate }}</dt>
+      <dd>
+        {{
+          "detail.about.male"
+            | translate: { percentage: (100 * (8 - species.gender_rate)) / 8 }
+        }}
+      </dd>
+      <dd>
+        {{
+          "detail.about.female"
+            | translate: { percentage: (100 * species.gender_rate) / 8 }
+        }}
+      </dd>
+    </dl>
+    <dl>
+      <dt class="light-text">{{ "detail.about.eggGroup" | translate }}</dt>
+      <dd *ngFor="let group of species.egg_groups">
+        {{ group.name | titlecase }}
+      </dd>
+    </dl>
+    <dl>
+      <dt class="light-text">{{ "detail.about.eggCycle" | translate }}</dt>
+      <dd>{{ species.stepsToHacth }}</dd>
+    </dl>
+    <h3>Training</h3>
+    <dl>
+      <dt class="light-text">{{ "detail.about.eggCycle" | translate }}</dt>
+      <dd>{{ species.growthRate?.descriptionDisplay }}</dd>
+    </dl>
+  </div>
+</div>
