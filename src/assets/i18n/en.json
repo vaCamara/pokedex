@@ -11,7 +11,10 @@
       "eggGroup": "Egg groups",
       "eggCycle": "Egg cycle",
       "male": "{{percentage}}% Male",
-      "female": "{{percentage}}% Female"
+      "female": "{{percentage}}% Female",
+      "breeding": "Breeding",
+      "training": "Training",
+      "trainingSpeed": "Training speed"
     },
     "stats": {
       "title": "Stats"

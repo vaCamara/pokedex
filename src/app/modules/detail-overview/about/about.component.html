@@ -13,7 +13,7 @@
   </div>
 
   <div class="infos">
-    <h3>Breeding</h3>
+    <h3>{{ "detail.about.breeding" | translate }}</h3>
     <dl>
       <dt class="light-text">{{ "detail.about.gender" | translate }}</dt>
       <dd>
@@ -39,10 +39,10 @@
       <dt class="light-text">{{ "detail.about.eggCycle" | translate }}</dt>
       <dd>{{ species.stepsToHacth }}</dd>
     </dl>
-    <h3>Training</h3>
+    <h3>{{ "detail.about.training" | translate }}</h3>
     <dl>
-      <dt class="light-text">{{ "detail.about.eggCycle" | translate }}</dt>
-      <dd>{{ species.growthRate?.descriptionDisplay }}</dd>
+      <dt class="light-text">{{ "detail.about.trainingSpeed" | translate }}</dt>
+      <dd>{{ species.growthRate?.descriptionDisplay | titlecase }}</dd>
     </dl>
   </div>
 </div>
