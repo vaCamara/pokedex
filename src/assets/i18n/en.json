@@ -17,7 +17,8 @@
       "trainingSpeed": "Training speed"
     },
     "stats": {
-      "title": "Stats"
+      "title": "Base stats",
+      "total": "Total"
     }
   }
 }

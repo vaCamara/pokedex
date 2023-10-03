@@ -1,0 +1,15 @@
+.stat-bar {
+  width: 200px;
+  height: 4px;
+  margin-top: 0.5rem;
+  background-color: rgba(63, 81, 181, 0.32);
+
+  .stat-value {
+    background-color: green;
+    height: 100%;
+
+    &.bad-stat {
+      background-color: red;
+    }
+  }
+}

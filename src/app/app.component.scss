@@ -1,13 +1,11 @@
 @import "src/styles/variables";
 
-:host {
-  .back-button {
-    border: none;
-    background-color: inherit;
-    color: $app-text-color-secondary;
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
-    z-index: 1;
-  }
+.back-button {
+  border: none;
+  background-color: inherit;
+  color: $app-text-color-secondary;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  z-index: 1;
 }

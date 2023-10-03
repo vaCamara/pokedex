@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { map, mergeAll, mergeMap, Observable, of, tap, toArray } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Pokemon } from '../models/pokemon';
 import { ListResult } from '../models/list-result';
 import { Species } from '../models/species';
@@ -16,8 +16,9 @@ export class PokedexService {
   constructor(protected http: HttpClient) {}
 
   getFirstVersionPokemons(): Observable<Pokemon[]> {
+    const params = new HttpParams().append('limit', 151);
     return this.http
-      .get<ListResult>(`${this.endpoint}/pokemon?offset=0&limit=151`)
+      .get<ListResult>(`${this.endpoint}/pokemon`, { params })
       .pipe(
         map((listResult) => listResult.results),
         mergeAll(),
@@ -66,7 +67,7 @@ export class PokedexService {
       );
   }
 
-  getGrowthRateBySpecies(species: Species): Observable<GrowthRate> {
+  private getGrowthRateBySpecies(species: Species): Observable<GrowthRate> {
     return this.http.get<GrowthRate>(species.growth_rate.url);
   }
 }

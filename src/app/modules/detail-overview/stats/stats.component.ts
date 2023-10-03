@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Species } from '../../../models/species';
 import { Pokemon } from '../../../models/pokemon';
-import { MenuItem } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,16 +8,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./stats.component.scss'],
 })
 export class StatsComponent implements OnInit {
-  species!: Species;
   pokemon!: Pokemon;
-  items: MenuItem[] = [];
+  totalStats!: number;
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe(({ pokemon, species }) => {
+    this.activatedRoute.parent?.data.subscribe(({ pokemon }) => {
       this.pokemon = pokemon;
-      this.species = species;
+      this.totalStats = this.pokemon.stats.reduce(
+        (total: number, baseStat) => total + baseStat.base_stat,
+        0,
+      );
     });
   }
 }

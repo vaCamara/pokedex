@@ -1,8 +1,31 @@
+@import './variables';
+
 .order {
   display: block;
   text-align: right;
   margin-top: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.detail-tab {
+  height: 100%;
+  background-color: white;
+  color: $app-text-color-secondary;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  .infos dl {
+    display: flex;
+
+    dt {
+      @media only screen and (max-width: 768px) {
+        width: 25%;
+      }
+      @media only screen and (min-width: 768px) {
+        width: 10rem;
+      }
+    }
+  }
 }
 
 .chip {

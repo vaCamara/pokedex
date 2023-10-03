@@ -1,1 +1,32 @@
-<p>stats works!</p>
+<div class="detail-tab pt-2">
+  <div class="infos">
+    <ng-container *ngFor="let baseStat of pokemon.stats">
+      <dl>
+        <dt>{{ baseStat.stat.name | titlecase }}</dt>
+        <dd>
+          {{ baseStat.base_stat }}
+        </dd>
+        <dd class="stat-bar">
+          <div
+            [ngClass]="{ 'bad-stat': baseStat.base_stat < 50 }"
+            [ngStyle]="{ 'width.%': baseStat.base_stat }"
+            class="stat-value"
+          ></div>
+        </dd>
+      </dl>
+    </ng-container>
+    <dl>
+      <dt>{{ "detail.stats.total" | translate }}</dt>
+      <dd>
+        {{ totalStats }}
+      </dd>
+      <dd class="stat-bar">
+        <div
+          [ngClass]="{ 'bad-stat': totalStats < 300 }"
+          [ngStyle]="{ 'width.%': totalStats / 6 }"
+          class="stat-value"
+        ></div>
+      </dd>
+    </dl>
+  </div>
+</div>

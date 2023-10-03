@@ -1,43 +1,19 @@
 @import 'src/styles/variables';
 
-:host {
-  .about-div {
-    height: 100%;
-    background-color: white;
-    color: $app-text-color-secondary;
-    padding-left: 1rem;
-    padding-right: 1rem;
+.light-text {
+  color: $app-text-color-light;
+}
 
-    .light-text {
-      color: $app-text-color-light;
-    }
+.size-div {
+  border-radius: 10px;
+  padding-left: 1rem;
+  box-shadow: 0 0 26px rgba(0, 0, 0, 0.25);
 
-    .size-div {
-      border-radius: 10px;
-      padding-left: 1rem;
-      box-shadow: 0 0 26px rgba(0, 0, 0, 0.25);
+  dl {
+    width: 40%;
 
-      dl {
-        width: 40%;
-
-        dd {
-          margin-inline-start: 0;
-        }
-      }
-    }
-
-    .infos dl {
-      display: flex;
-
-      dt {
-        @media only screen and (max-width: 768px) {
-          width: 25%;
-        }
-        @media only screen and (min-width: 768px) {
-          width: 10rem;
-        }
-      }
+    dd {
+      margin-inline-start: 0;
     }
   }
-
 }
