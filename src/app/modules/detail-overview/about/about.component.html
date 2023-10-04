@@ -16,18 +16,25 @@
     <h3>{{ "detail.about.breeding" | translate }}</h3>
     <dl>
       <dt class="light-text">{{ "detail.about.gender" | translate }}</dt>
-      <dd>
-        {{
-          "detail.about.male"
-            | translate: { percentage: (100 * (8 - species.gender_rate)) / 8 }
-        }}
-      </dd>
-      <dd>
-        {{
-          "detail.about.female"
-            | translate: { percentage: (100 * species.gender_rate) / 8 }
-        }}
-      </dd>
+      <ng-container *ngIf="species.gender_rate > -1">
+        <dd>
+          {{
+            "detail.about.male"
+              | translate: { percentage: (100 * (8 - species.gender_rate)) / 8 }
+          }}
+        </dd>
+        <dd>
+          {{
+            "detail.about.female"
+              | translate: { percentage: (100 * species.gender_rate) / 8 }
+          }}
+        </dd>
+      </ng-container>
+      <ng-container *ngIf="species.gender_rate === -1">
+        <dd>
+          {{ "detail.about.asexual" | translate }}
+        </dd>
+      </ng-container>
     </dl>
     <dl>
       <dt class="light-text">{{ "detail.about.eggGroup" | translate }}</dt>

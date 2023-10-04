@@ -14,7 +14,8 @@
       "female": "{{percentage}}% Female",
       "breeding": "Breeding",
       "training": "Training",
-      "trainingSpeed": "Training speed"
+      "trainingSpeed": "Training speed",
+      "asexual": "Asexual"
     },
     "stats": {
       "title": "Base stats",
