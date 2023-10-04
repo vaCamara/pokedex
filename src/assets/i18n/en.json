@@ -19,7 +19,11 @@
     },
     "stats": {
       "title": "Base stats",
-      "total": "Total"
+      "total": "Total",
+      "typeEffects": "Type effectiveness",
+      "immune": "Immune",
+      "weaknesses": "Weaknesses",
+      "resistances": "Resistances"
     }
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  forkJoin,
   map,
   mergeAll,
   mergeMap,
@@ -15,6 +16,7 @@ import { ListResult } from '../models/list-result';
 import { Species } from '../models/species';
 import { CacheItem } from '../models/cache-item';
 import { GrowthRate } from '../models/growth-rate';
+import { TypeDetail } from '../models/type-detail';
 
 @Injectable({ providedIn: 'root' })
 export class PokedexService {
@@ -52,6 +54,14 @@ export class PokedexService {
       return of(cachedElement.pokemon);
     }
     return this.http.get<Pokemon>(`${this.endpoint}/pokemon/${pokemonId}`).pipe(
+      mergeMap((el) => {
+        return this.getTypesByPokemon(el).pipe(
+          map((type) => {
+            el.typeDetails = type;
+            return el;
+          }),
+        );
+      }),
       tap((el) => {
         this.map.set(el.id, new CacheItem(el, cachedElement?.species));
       }),
@@ -83,5 +93,13 @@ export class PokedexService {
 
   private getGrowthRateBySpecies(species: Species): Observable<GrowthRate> {
     return this.http.get<GrowthRate>(species.growth_rate.url);
+  }
+
+  private getTypesByPokemon(pokemon: Pokemon): Observable<TypeDetail[]> {
+    const typePromises = [];
+    for (let type of pokemon.types) {
+      typePromises.push(this.http.get<TypeDetail>(type.type.url));
+    }
+    return forkJoin(typePromises);
   }
 }

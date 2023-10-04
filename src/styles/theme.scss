@@ -38,12 +38,17 @@
   }
 }
 
+.light-text {
+  color: $app-text-color-light;
+}
+
 .chip {
   border-radius: 10px;
   font-size: 16px;
   padding: 2px 10px;
   line-height: 18px;
   width: fit-content;
+  color: $app-text-color;
 
   &.lighten-color {
     background-color: rgba(255, 255, 255, 0.4);
@@ -79,7 +84,7 @@
 }
 
 .flying {
-  background-color: #59c7a8;
+  background-color: #81ecc7;
 }
 
 .electric {
@@ -96,6 +101,10 @@
 
 .ghost {
   background-color: rgba(6, 4, 114);
+}
+
+.dark {
+  background-color: rgb(114, 114, 168);
 }
 
 .fairy {

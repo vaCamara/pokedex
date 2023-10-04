@@ -1,8 +1,10 @@
 <div class="detail-tab pt-2">
+  <h3>{{ "detail.stats.title" | translate }}</h3>
+
   <div class="infos">
     <ng-container *ngFor="let baseStat of pokemon.stats">
       <dl>
-        <dt>{{ baseStat.stat.name | titlecase }}</dt>
+        <dt class="light-text">{{ baseStat.stat.name | titlecase }}</dt>
         <dd>
           {{ baseStat.base_stat }}
         </dd>
@@ -18,7 +20,7 @@
       </dl>
     </ng-container>
     <dl>
-      <dt>{{ "detail.stats.total" | translate }}</dt>
+      <dt class="light-text">{{ "detail.stats.total" | translate }}</dt>
       <dd>
         {{ totalStats }}
       </dd>
@@ -28,6 +30,28 @@
           [ngStyle]="{ 'width.%': totalStats / 6 }"
           class="stat-value"
         ></div>
+      </dd>
+    </dl>
+  </div>
+
+  <h3>{{ "detail.stats.typeEffects" | translate }}</h3>
+  <div *ngFor="let el of effectToTypeMap | keyvalue" class="infos">
+    <dl *ngIf="el.value.length > 0" class="flex-wrap">
+      <dt [ngSwitch]="el.key" class="light-text">
+        <span *ngSwitchCase="dmgRelationEnum.IMMUNE">{{
+          "detail.stats.immune" | translate
+        }}</span>
+        <span *ngSwitchCase="dmgRelationEnum.RESISTANCE">{{
+          "detail.stats.resistances" | translate
+        }}</span>
+        <span *ngSwitchCase="dmgRelationEnum.WEAKNESS">{{
+          "detail.stats.weaknesses" | translate
+        }}</span>
+      </dt>
+      <dd *ngFor="let type of el.value">
+        <div class="chip {{ type }}">
+          {{ type | titlecase }}
+        </div>
       </dd>
     </dl>
   </div>
