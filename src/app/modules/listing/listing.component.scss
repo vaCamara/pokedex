@@ -3,7 +3,17 @@
 :host {
   .pokedex-title {
     color: $app-text-color-secondary;
-    margin-left: 3rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    @media only screen and (max-width: 768px) {
+      justify-content: space-between;
+    }
+    @media only screen and (min-width: 768px) {
+      .favorite-button {
+        margin-left: 70%;
+      }
+    }
   }
 
   .item-container {

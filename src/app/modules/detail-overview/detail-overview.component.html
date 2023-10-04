@@ -1,6 +1,14 @@
 <div class="detail-overview {{ pokemon.types[0].type.name }} m-0">
   <div class="pt-2">
-    <span class="order">#{{ pokemon.order | number: "3.0" }}</span>
+    <span class="order">
+      <button (click)="updateFavorites()" class="favorite-button">
+        <i
+          [ngClass]="{ 'pi-heart': !isFavorite, 'pi-heart-fill': isFavorite }"
+          class="pi"
+        ></i>
+      </button>
+      #{{ pokemon.order | number: "3.0" }}
+    </span>
     <span class="ml-2 font-bold">{{ pokemon.name | titlecase }} </span>
 
     <div class="flex">

@@ -1,6 +1,17 @@
-<h1 class="pokedex-title">{{ "pokedex.title" | translate }}</h1>
+<h1 class="pokedex-title">
+  <div>
+    {{ "pokedex.title" | translate }}
+  </div>
+  <button (click)="filterFavorites()" class="favorite-button">
+    <i
+      [ngClass]="{ 'pi-heart': !showFavorites, 'pi-heart-fill': showFavorites }"
+      class="pi"
+    ></i>
+  </button>
+</h1>
+
 <div class="item-container">
-  <ng-container *ngFor="let pokemon of pokemons">
+  <ng-container *ngFor="let pokemon of displayPokemons">
     <div
       (click)="seeDetails(pokemon.id)"
       class="item {{ pokemon.types[0].type.name }}"

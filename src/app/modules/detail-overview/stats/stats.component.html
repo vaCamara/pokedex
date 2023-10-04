@@ -9,7 +9,9 @@
         <dd class="stat-bar">
           <div
             [ngClass]="{ 'bad-stat': baseStat.base_stat < 50 }"
-            [ngStyle]="{ 'width.%': baseStat.base_stat }"
+            [ngStyle]="{
+              'width.%': baseStat.base_stat > 100 ? 100 : baseStat.base_stat
+            }"
             class="stat-value"
           ></div>
         </dd>

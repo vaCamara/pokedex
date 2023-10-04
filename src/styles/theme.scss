@@ -28,6 +28,16 @@
   }
 }
 
+.favorite-button {
+  background-color: inherit;
+  border: none;
+  color: pink;
+
+  &::selection {
+    border: none;
+  }
+}
+
 .chip {
   border-radius: 10px;
   font-size: 16px;
