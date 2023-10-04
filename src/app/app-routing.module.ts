@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -22,6 +23,10 @@ const routes: Routes = [
       import('./modules/detail-overview/detail-overview.module').then(
         (m) => m.DetailOverviewModule,
       ),
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
 

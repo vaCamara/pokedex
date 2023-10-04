@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Router } from '@angular/router';
 import { AppConfigSetting } from './configs/app-config-setting';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +11,13 @@ import { AppConfigSetting } from './configs/app-config-setting';
 export class AppComponent {
   constructor(
     private translate: TranslateService,
-    private router: Router,
+    private location: Location,
   ) {
-    translate.setDefaultLang(AppConfigSetting.LANGUAGE);
-    translate.use(AppConfigSetting.LANGUAGE);
+    this.translate.setDefaultLang(AppConfigSetting.LANGUAGE);
+    this.translate.use(AppConfigSetting.LANGUAGE);
   }
 
   back() {
-    this.router.navigate(['pokedex']);
+    this.location.back();
   }
 }
